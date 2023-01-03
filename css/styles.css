@@ -109,8 +109,26 @@ header {
     padding-top: 24px;
     padding-bottom: 24px;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }  
  
+ .current {
+    position: relative;
+ }
+
+ .current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color:#404BBF;
+    position: absolute;
+    left: 0;
+    bottom:0;
+    border-radius: 2px;
+ }
+
+
  .contacts a {
     margin-right: 0;
  }
@@ -126,7 +144,7 @@ header {
 }
 
 .site-nav a.current {
-    color: #4D5AE5;
+    color: #404BBF;
 }
 
 
@@ -146,7 +164,7 @@ header {
     padding-top: 24px;
     padding-bottom: 24px;
     display: block;
-   
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .number a{
@@ -353,6 +371,7 @@ header {
      height: 40px;
      background-color: var(--accent-color);
      border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  .social-network-link:hover,.social-network-link:focus {
     background: #404BBF;
@@ -431,7 +450,11 @@ header {
     box-sizing: border-box;
     border-bottom: 0.5px #F4F4FD;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* position: relative; */
+    
 }
+
 
 /* Оформлення п'ятої секції */
 .customers-title {
@@ -449,6 +472,7 @@ header {
     align-items: center;
     box-shadow: none;
     color: #8E8F99 ;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers {
     padding-bottom: 120px;
@@ -551,6 +575,7 @@ header {
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
  .footer-icons-twitter {
      display: flex;
@@ -560,6 +585,7 @@ header {
      align-items: center;
      background: rgba(255, 255, 255, 0.1);
      border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
 .footer-icons-facebook {
@@ -570,6 +596,7 @@ header {
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons-linkedin {
@@ -580,6 +607,7 @@ header {
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons-instagram:hover {
@@ -618,6 +646,7 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);  
     border-radius: 4px;  
     border: 1px solid transparent ;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -627,7 +656,6 @@ header {
     background-color:#404BBF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-
 
 }
 
@@ -644,7 +672,8 @@ header {
     padding-bottom: 12px;
     padding-left: 24px;
     padding-right: 24px;
-    border: 1px solid transparent;;
+    border: 1px solid transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:hover,.portfolio-btn:focus
@@ -664,6 +693,52 @@ header {
 *, ::after , ::before {
     box-sizing: border-box;
 }
+
+.project-card-overlay {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    
+}
+ .project-card-overlay::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--accent-color);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+} 
+ 
+.portfolio-link:hover .project-card-overlay::before {
+    transform: translateY(0);
+} 
+
+.portfolio-card-text {
+    position: absolute;
+    /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    color: #F4F4FD;
+    padding-top: 300px;
+    padding-right: 32px;
+    padding-left: 32px;
+    
+    
+}
+
+.portfolio-link:hover .portfolio-card-text {
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%); */
+    padding-top: 40px;
+    padding-right: 32px;
+    padding-left: 32px;
+    
+    
+}
+
 
 /*колір основного тексту #2E2F42*/
 
