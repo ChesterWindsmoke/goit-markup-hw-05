@@ -37,8 +37,20 @@
             <div class="overlay">
             <section class="hero">
                 <h1 class="hero-title">Effective Solutions<br>for Your Business<br></h1>
-                <button class="filter-btn" type="button">Order Service</button>
+                <button data-modal-open class="filter-btn" type="button">Order Service</button>
             </section>
+            </div>
+
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                    <button class="close-icon" data-modal-close>
+                        <svg class="x-icon">
+                            <use href="./images/Vector.svg">
+
+                            </use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         <!--Одна з секцій сторінки-->
         <section class="section">
@@ -365,6 +377,6 @@
          </div>
          </div>
           </footer>
-       
+    <script src="./js/modal.js"></script>
 </body>
 </html>
