@@ -463,7 +463,7 @@ header {
     border-bottom: 0.5px #F4F4FD;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* position: relative; */
+    
 
 
 }
@@ -486,7 +486,7 @@ header {
     align-items: center;
     box-shadow: none;
     color: #8E8F99;
-    transition: color,border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ,border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .customers {
@@ -692,7 +692,7 @@ header {
     padding-left: 24px;
     padding-right: 24px;
     border: 1px solid #E7E9FC;
-    transition: background-color,border,color,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .portfolio-btn:hover,
@@ -716,7 +716,7 @@ header {
 ::before {
     box-sizing: border-box;
 }
-
+/* Дів для надання position:relative , щоб абсолютно спозиціонувати дів portofolio-card-text(дів з оверлеєм та текстом для картки) */
 .project-card-overlay {
     position: relative;
     overflow: hidden;
@@ -724,7 +724,7 @@ header {
 
 }
 
-.project-card-overlay::before {
+.portfolio-card-text {
     display: inline-block;
     content: "";
     position: absolute;
@@ -735,22 +735,11 @@ header {
     background-color: var(--accent-color);
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-link:hover .project-card-overlay::before {
-    transform: translateY(0);
-}
-
-.portfolio-card-text {
     position: absolute;
     color: #F4F4FD;
-    padding-top: 300px;
+    padding-top: 40px;
     padding-right: 32px;
     padding-left: 32px;
-    transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-
 }
 
 .portfolio-link:hover .portfolio-card-text {
@@ -811,14 +800,16 @@ header {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1) , background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    fill: #000000;
+    
 }
 
-.x-icon{
-    width: 8px;
-    height: 8px;
+.close-icon:hover,
+.close-icon:focus {
+    background-color: #F4F4FD;
+    fill: #404BBF;
 }
-
-
 
 /*колір основного тексту #2E2F42*/
 
